@@ -1,0 +1,33 @@
+{% extends 'partials/_base.html' %}
+{% load static %}
+{% block content %}
+  <!-- about section -->
+  <section class="about_section layout_padding">
+    <div class="container  ">
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2> {{dish.Food_Name}} </h2>
+            </div>
+            <p>
+              {{dish.Food_Recipe}}
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 ">
+          <div class="" style="margin-left:20%">
+            <img src="{{dish.Food_Image.url}}" alt="" style="width:100%;height:50%" />
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center">
+        <h2>Fiyat: {{dish.Food_Price}} ₺</h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- end about section -->
+
+  {% endblock %}

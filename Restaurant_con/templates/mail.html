@@ -1,0 +1,63 @@
+
+{% extends 'partials/_base.html' %}
+{% load static %}
+{% block content %}
+{% comment %} <div class="container mt-3">
+	<div class="screen">
+		<div class="screen__content">
+			<form method="POST" action="{% url 'sendmail' %}">
+				<div class="login__field">
+					<i class="login__icon fas fa-user"></i>
+					    <input type="text" name="name" placeholder="Mail Başlığı" required>
+				</div>
+				<div class="login__field">
+					<i class="login__icon fas fa-lock"></i>
+					<input type="email" name="email" placeholder="Şirket Mail" required>
+				</div>
+                <div class="login__field">
+					<i class="login__icon fas fa-lock"></i>
+					<textarea name = "message" placeholder="Mesajınız" required></textarea>
+				</div>
+				<button class="btn btn-primary mt-2" type="submit">Send</button>			
+			</form>
+			<div class="social-login">
+				<h3>log in via</h3>
+				<div class="social-icons">
+					<a href="#" class="social-login__icon fab fa-instagram"></a>
+					<a href="#" class="social-login__icon fab fa-facebook"></a>
+					<a href="#" class="social-login__icon fab fa-twitter"></a>
+				</div>
+			</div>
+		</div>
+		<div class="screen__background">
+			<span class="screen__background__shape screen__background__shape4"></span>
+			<span class="screen__background__shape screen__background__shape3"></span>		
+			<span class="screen__background__shape screen__background__shape2"></span>
+			<span class="screen__background__shape screen__background__shape1"></span>
+		</div>		
+	</div>
+</div> {% endcomment %}
+
+<section class="contact_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>Mail<span> Gönder</span></h2>
+      </div>
+    <div class="row" style="margin-left:15%">
+        <div class="col-md-10 px-5">
+            <div class="form_container">
+            <form method="POST" action="{% url 'sendmail' %}">
+            {% csrf_token %}
+                <div class="row row-fluid">
+                <div class="col-lg-12 col-md-12 col-sm-12"><input class="form-control" type="text" name="name" placeholder="Mail Başlığı" required></div>
+                <div class="col-lg-12 col-md-12 col-sm-12"><input  class="form-control" type="email" name="email" placeholder="Kime Gönderilecek" required></div>
+                <div class="col-lg-12 col-md-12 col-sm-12"><textarea  class="form-control"  name = "message" placeholder="Mesajınız" required></textarea></div>
+                <div class="col-lg-12 col-md-12 col-sm-15"><button  class="form-control btn btn-success mt-2" type="submit">Send</button>	</div>
+                </div>
+                </form>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

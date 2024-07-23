@@ -1,0 +1,86 @@
+{% extends 'partials/_base.html' %}
+{% load static %}
+{% block content %}
+  <!-- dish section -->
+  <br>
+  <div class="heading_container heading_center">
+    <h2><span>Ana Yemeklerimiz</span></h2>
+   </div>
+  <section class="dish_section layout_padding">
+    <div class="container-fluid">
+      <div class="owl-carousel dish_carousel">
+        {% if dishes and dishes_drinks and dishes_desserts %}
+
+          {% for dish in dishes %}
+            <div class="item ">
+              <div class="box">
+                <div class="img-box">
+                  <img src="{{dish.Food_Image.url}}" alt=""  style="width:350px;height:300px " />
+                  <div class="btn_overlay">
+                    <a href="{% url 'dish_detail' dish.id %}" class="">
+                      Detayları Görüntüle
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}   
+          {% endif %} 
+      </div>
+    </div>
+  </section>
+
+        <div class="heading_container heading_center">
+          <h2><span>Tatlılarımız</span></h2>
+      </div>
+    <section class="dish_section layout_padding">
+    <div class="container-fluid">
+      <div class="owl-carousel dish_carousel">
+        {% if dishes and dishes_drinks and dishes_desserts %}
+          {% for dish in dishes_desserts %}
+            <div class="item ">
+              <div class="box">
+                <div class="img-box">
+                  <img src="{{dish.Food_Image.url}}" alt=""  style="width:400px;height:300px " />
+                  <div class="btn_overlay">
+                    <a href="{% url 'dish_detail' dish.id %}" class="">
+                      Detayları Görüntüle
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}    
+          {% endif %}
+      </div>
+    </div>
+  </section>
+          <div class="heading_container heading_center">
+            <h2><span>İçeceklerimiz</span></h2>
+          </div>
+  <section class="dish_section layout_padding">
+    <div class="container-fluid">
+      <div class="owl-carousel dish_carousel">
+        {% if dishes and dishes_drinks and dishes_desserts %}
+          {% for dish in dishes_drinks %}
+            <div class="item ">
+              <div class="box">
+                <div class="img-box">
+                  <img src="{{dish.Food_Image.url}}" alt=""  style="width:340px;height:400px " />
+                  <div class="btn_overlay">
+                    <a href="{% url 'dish_detail' dish.id %}" class=""> Detayları Görüntüle</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %} 
+         {% endif %}   
+      </div>
+    </div>
+  </section>
+  <!-- end dish section -->
+
+
+  <!-- end info section -->
+{% endblock %}
+ 

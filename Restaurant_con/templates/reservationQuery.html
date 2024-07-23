@@ -1,0 +1,66 @@
+{% extends 'partials/_base.html' %}
+{% load static %}
+{% block content %}
+  <!-- contact section -->
+  <section class="contact_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>Rezervasyon <span>Sorgu</span></h2>
+      </div>
+      {% if messages %} {% for message in messages %}
+      <div class="alert alert-danger">{{message}}</div>
+      <div class="alert alert-info"><a href="{% url 'reservation' %}" style=""><u>Hemen Rezervasyon Yap!</u></a></div>
+      {% endfor %} {% endif %}
+      <div class="row" style="margin-left:15%;margin-bottom:20%">
+        <div class="col-md-10 px-8">
+          <div class="form_container">
+          {% if reservation %}
+            <div class="res_box">
+          <h3 class="res_heading">
+            REZERVASYON BİLGİLERİ
+          </h3>
+          <div class="res_detail_box">
+            <h4 class="res_detail_heading">
+              Rezervasyon Günü ve Saati
+            </h4>
+            <div class="res_detail_container">
+              <div class="res_time">
+                <h4>{{reservation.Date}}</h4>
+                <h4>{{reservation.hour}}</h4>
+              </div>
+            </div>
+            <a href="" class="res_call"><i class="fa fa-phone" aria-hidden="true"></i>+90 {{reservation.Phone}}</a>
+            <br>
+            <a href="{% url 'reservationQuery' %}" class=""><i class="fa fa-calender" aria-hidden="true"></i>Başka Bir Sorgu Yapmak İçin Tıklayınız</a><br><br>
+            <p>Bu rezervasyonu iptal mi etmek istiyorsunuz?</p>
+            <p><strong>{{ reservation.First_Name }} {{ reservation.Last_Name }}</strong></p>
+    
+            <form action="{% url 'reservationDelete' reservation.id %}" method="post">
+                {% csrf_token %}
+                <button class="btn btn-danger" type="submit">Evet, Sil</button>
+                <a class="btn btn-info" href="{% url 'index' %}">Hayır, Geri Dön</a>
+                </form>
+          </div>
+        </div>
+            {% else %}
+            <form action="" method="POST">
+            {% csrf_token %}
+            <div class="row row-fluid">
+              <div class="col-lg-12 col-md-12 col-sm-12">{{form.email}}</div>
+              <div class="text-center pd col-lg-12 col-md-12 col-sm-15">
+                <input type="submit" value="Rezervasyon Sorgula" id="submit" class="btn btn-success btn-radius btn-brd grd1 btn-block ">
+              </div>
+            </div>
+            </form>
+            {%endif%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end contact section -->
+
+
+  <!-- info section -->
+
+ {% endblock %}

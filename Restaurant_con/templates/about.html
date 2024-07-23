@@ -1,0 +1,42 @@
+{% extends 'partials/_base.html' %}
+{% load static %}
+{% block content %}
+  <!-- about section -->
+  <section class="about_section layout_padding">
+    <div class="container  ">
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2> About Us </h2>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Vel eros donec ac odio tempor orci. Sed viverra tellus in hac. Pellentesque habitant morbi tristique senectus et netus et. 
+              Vel orci porta non pulvinar neque laoreet suspendisse interdum consectetur. Proin fermentum leo vel orci. Amet tellus cras 
+              adipiscing enim eu turpis egestas. Sit amet tellus cras adipiscing enim eu. Laoreet id donec ultrices tincidunt arcu non. 
+              Nullam non nisi est sit amet facilisis magna. Blandit massa enim nec dui. Est pellentesque elit ullamcorper dignissim cras 
+              tincidunt lobortis. Gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim. Lorem ipsum dolor sit amet 
+              consectetur adipiscing elit. Faucibus vitae aliquet nec ullamcorper sit amet risus. Euismod in pellentesque massa placerat 
+              duis ultricies lacus sed turpis.
+              Facilisis magna etiam tempor orci eu lobortis. Gravida quis blandit turpis cursus in hac. Duis at consectetur lorem donec 
+              massa sapien faucibus et. Enim nec dui nunc mattis enim ut tellus. Nulla aliquet porttitor lacus luctus accumsan tortor. 
+              Felis donec et odio pellentesque diam volutpat commodo sed egestas. Tellus rutrum tellus pellentesque eu tincidunt tortor 
+              aliquam nulla. Sem viverra aliquet eget sit amet. Praesent semper feugiat nibh sed. Pellentesque elit ullamcorper dignissim 
+              cras tincidunt lobortis feugiat vivamus at.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 ">
+          <div class="img-box">
+            <img src="{% static 'images/about-img.png' %}" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end about section -->
+
+  {% endblock %}

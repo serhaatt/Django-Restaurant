@@ -1,0 +1,253 @@
+    {% extends 'partials/_base.html' %}
+    {% load static %}
+    {% block content %}
+    <div class="hero_bg_box">
+      <img src="{% static 'images/slider-bg.jpg' %}" alt="">
+    </div>
+    <!-- slider section -->
+    <section class="slider_section ">
+      <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container ">
+              <div class="detail-box">
+                <h1>
+                  Serhat'ın Mutfağına <br>
+                  Hoşgeldiniz!
+                </h1>
+                <div class="btn-box">
+                  <a href="{% url 'menu' %}" class="btn1">
+                    Menümüz
+                  </a>
+                  <a href="{% url 'contact' %}" class="btn2">
+                    İletişim
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end slider section -->
+  </div>
+
+
+  <!-- dish section -->
+
+  <section class="dish_section layout_padding-top">
+    <div class="container-fluid">
+      <div class="heading_container heading_center">
+        <h2>
+          Son <span>Spesiyallerimiz</span>
+        </h2>
+      </div>
+      <div class="owl-carousel dish_carousel">
+          {% for dish in dishes %}
+        <div class="item ">
+          <div class="box">
+            <div class="img-box">
+              <img src="{{dish.Food_Image.url}}" alt="" style="width:450px;height:300px" />
+              <div class="btn_overlay">
+                <a href="{% url 'dish_detail' dish.id %}" class="">
+                  Detayları Görüntüle
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+          {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- end dish section -->
+
+
+  <!-- about section -->
+
+  <section class="about_section layout_padding">
+    <div class="container  ">
+      <div class="row">
+        <div class="col-md-6 ">
+          <div class="img-box">
+            <img src="{% static 'images/about-img.png' %}" alt="" />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2> Hakkımızda </h2>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+              incididunt ut labore et dolore magna aliqua. Vel eros donec ac odio tempor orci.
+              Sed viverra tellus in hac. Pellentesque habitant morbi tristique senectus et netus et. 
+              Vel orci porta non pulvinar neque laoreet suspendisse interdum consectetur. Proin fermentum leo vel orci. 
+              Amet tellus cras adipiscing enim eu turpis egestas. Sit amet tellus cras adipiscing enim eu.
+            </p>
+            <a href="{% url 'about' %}">
+              Daha Fazla Oku
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end about section -->
+
+  <section class="reservation_section layout_padding">
+    <div class="reservation_bg_box">
+      <img src="{% static 'images/res-bg.jpg' %}" alt="">
+    </div>
+    <div class="container">
+      <div class="col-md-6 col-lg-5 offset-md-1">
+        <div class="res_box">
+          <h3 class="res_heading">
+            REZERVASYONLAR İÇİN
+          </h3>
+          <div class="res_detail_box">
+            <h4 class="res_detail_heading">
+              Rezervasyon Saatleri
+            </h4>
+            <div class="res_detail_container">
+              <div class="res_time">
+                <h6>
+                  Cuma-Pazar
+                </h6>
+                <h5>
+                  10.00 – 17:00
+
+                </h5>
+              </div>
+              <div class="res_time">
+                <h6>
+                  Pazartesi-Perşembe
+                </h6>
+                <h5>
+                  9.00 – 18:0
+                </h5>
+              </div>
+            </div>
+            <a href="" class="res_call">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              +90 1234567890
+            </a>
+            <br>
+            <a href="{% url 'reservation' %}" class="">
+              <i class="fa fa-calender" aria-hidden="true"></i>
+              Online Rezervasyon İçin Tıklayınız
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- blog section -->
+
+  {% comment %} <section class="blog_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+         Yemeklerimizin <span>Tarifleri</span>
+        </h2>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-lg-4 mx-auto">
+          <div class="box">
+            <div class="img-box">
+              <img src="{% static 'images/b1.jpg' %}" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Look even slightly believable. If you are
+              </h5>
+              <p>
+                alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+              </p>
+              <a href="">
+                Read More
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mx-auto">
+          <div class="box">
+            <div class="img-box">
+              <img src="{% static 'images/b2.jpg' %}" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Anything embarrassing hidden in the middle
+              </h5>
+              <p>
+                alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+              </p>
+              <a href="">
+                Read More
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mx-auto">
+          <div class="box">
+            <div class="img-box">
+              <img src="{% static 'images/b3.jpg' %}" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Molestias magni natus dolores odio commodi.
+              </h5>
+              <p>
+                alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+              </p>
+              <a href="">
+                Read More
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> {% endcomment %}
+  <!-- end blog section -->
+  <!-- client section -->
+  <section class="client_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Son Müşteri Yorumları
+        </h2>
+      </div>
+    </div>
+    <div class="container">
+      <div class="owl-carousel client_carousel">
+      {% for comment in comments %}
+        <div class="item ">
+          <div class="client_box b-1">
+            <div class="client-id">
+              <div class="img-box">
+                <img src=" {{comment.image.url}}" alt="" style="width:240px;height:240px"/>
+              </div>
+              <div class="name">
+                <h5>
+                  {{comment.name}}
+                </h5>
+              </div>
+            </div>
+            <div class="detail">
+              <p>{{comment.message}}</p>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- end client section -->
+
+
+{% endblock %}
